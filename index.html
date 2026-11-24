@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080817">
+  <title>Just for u Bamisho ♡</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      color: #fff;
+      background:
+        radial-gradient(ellipse at 50% 42%, rgba(79, 54, 171, .35), transparent 54%),
+        linear-gradient(145deg, #080817, #111039 55%, #080817);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    .stars { position: fixed; inset: 0; pointer-events: none; overflow: hidden; }
+    .stars span {
+      position: absolute; color: #ff76c9; opacity: .78;
+      animation: float 5s ease-in-out infinite;
+      text-shadow: 0 0 12px rgba(255, 91, 195, .7);
+    }
+    .stars span:nth-child(3n) { color: #aaa5ff; }
+    .stars span:nth-child(2n) { animation-delay: -2.3s; }
+    main { width: min(92vw, 680px); text-align: center; position: relative; z-index: 1; padding: 22px 0; }
+    .bouquet-wrap {
+      width: min(78vw, 490px);
+      margin: 0 auto;
+      perspective: 1100px;
+      filter: drop-shadow(0 22px 30px rgba(0,0,0,.4));
+    }
+    .bouquet {
+      display: block; width: 100%; height: auto;
+      border-radius: 12px;
+      transform-style: preserve-3d;
+      backface-visibility: visible;
+      animation: turn 14s linear infinite;
+      box-shadow: 0 0 38px rgba(134, 99, 255, .17);
+    }
+    .message {
+      margin: 26px 0 0;
+      font-size: clamp(25px, 5.6vw, 43px);
+      letter-spacing: .04em;
+      color: #ffd5f2;
+      text-shadow: 0 0 12px #e85bb6, 0 0 32px rgba(165, 93, 255, .65);
+      animation: glow 2.8s ease-in-out infinite alternate;
+    }
+    .heart { display: block; margin-top: 10px; color: #ff83d1; font-size: 22px; }
+    @keyframes turn {
+      from { transform: rotateY(0deg) rotateZ(-1deg); }
+      to { transform: rotateY(360deg) rotateZ(-1deg); }
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 8px #e85bb6, 0 0 20px rgba(165,93,255,.4); }
+      to { text-shadow: 0 0 15px #ff83d1, 0 0 36px rgba(165,93,255,.85); }
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0) rotate(0); }
+      50% { transform: translateY(-18px) rotate(12deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .bouquet, .message, .stars span { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" aria-hidden="true">
+    <span style="left:8%;top:16%;font-size:18px">♡</span>
+    <span style="left:82%;top:12%;font-size:20px">✦</span>
+    <span style="left:17%;top:72%;font-size:14px">✧</span>
+    <span style="left:91%;top:68%;font-size:17px">♡</span>
+    <span style="left:72%;top:84%;font-size:15px">✦</span>
+    <span style="left:4%;top:48%;font-size:15px">✧</span>
+    <span style="left:34%;top:8%;font-size:13px">♡</span>
+    <span style="left:64%;top:25%;font-size:14px">✧</span>
+    <span style="left:87%;top:43%;font-size:13px">♡</span>
+    <span style="left:25%;top:88%;font-size:18px">✦</span>
+    <span style="left:52%;top:91%;font-size:14px">♡</span>
+    <span style="left:45%;top:18%;font-size:12px">✧</span>
+  </div>
+  <main>
+    <div class="bouquet-wrap">
+      <img class="bouquet" src="flower-bouquet.jpg" alt="A colorful digital flower bouquet surrounded by little hearts">
+    </div>
+    <h1 class="message">*just for u bamisho*</h1>
+    <span class="heart" aria-hidden="true">♡</span>
+  </main>
+</body>
+</html>
